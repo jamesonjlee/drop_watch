@@ -7,6 +7,9 @@ This is just a mirror/copy of DropWatch via rpmfind to make it buildable/usable 
 
 install binutils, readline, nl-3, nl-genl-3
 
+[github upstream](https://github.com/pavel-odintsov/drop_watch)
+need different kernel for 14.04 [src](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1660634)
+
 ```
 $ ldd dropwatch
 linux-vdso.so.1 =>  (0x00007fffb47ff000)
