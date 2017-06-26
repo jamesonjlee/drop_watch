@@ -9,7 +9,7 @@ License: GPLv2+
 Group: Applications/System 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: kernel-devel, libnl3-devel, readline-devel
-BuildRequires: binutils-devel
+BuildRequires: binutils-devel, pkg-config
 Requires: libnl3, readline
 
 %description
