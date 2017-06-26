@@ -95,13 +95,18 @@ static int lookup_kas_proc(__u64 pc, struct loc_result *location)
 
 	last_name = NULL;
 	uipc = pc;
+	ulpc = 0;
 	while (!feof(pf)) {
 		/* 
 		 * Each line of /proc/kallsyms is formatteded as:
 		 *  - "%pK %c %s\n" (for kernel internal symbols), or
 		 *  - "%pK %c %s\t[%s]\n" (for module-provided symbols)
 		 */
-		fscanf(pf, "%llx %*s %as [ %*[^]] ]", &ppc, &name);
+		if (fscanf(pf, "%llx %*s %ms [ %*[^]] ]", (unsigned long long *)&ppc, &name) < 0) {
+			perror("Error Scanning File: ");
+			break;
+		}
+
 		uppc = (__u64)ppc;
 		if ((uipc >= ulpc) &&
 		    (uipc < uppc)) {
