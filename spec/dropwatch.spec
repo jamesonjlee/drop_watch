@@ -21,6 +21,7 @@ network packets.
 
 %build
 cd src
+export CFLAGS=$RPM_OPT_FLAGS
 make 
 
 %install
