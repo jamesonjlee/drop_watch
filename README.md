@@ -1,4 +1,8 @@
-- Building in Ubuntu
+This is just a mirror/copy of DropWatch via rpmfind to make it buildable/usable on Ubuntu (debian?)
+
+[source](https://rpmfind.net/linux/rpm2html/search.php?query=dropwatch)
+
+- Building in Ubuntu (16.04)
 ----
 
 install binutils, readline, nl-3, nl-genl-3
